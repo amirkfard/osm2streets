@@ -399,7 +399,7 @@ impl PyStreetNetwork {
     /// This method can reduce complexity in sparse networks.
     pub fn collapse_intersection(&mut self, intersection: usize) -> PyResult<()> {
         let i = IntersectionID(intersection);
-        if self.inner.intersections.get(&i).map(|int| int.roads.len()) == Some(2) {
+        if self.inner.intersections.get(&i).map(|int| int.roads.len()) == Some(3) {
             self.inner.collapse_intersection(i);
         }
         Ok(())
